@@ -1,8 +1,8 @@
 class Persona {
-    constructor(nombre, edad, DNI, sexo, peso, altura, anioNacimiento) {
+    constructor(nombre, edad, dni, sexo, peso, altura, anioNacimiento) {
       this.nombre = nombre;
       this.edad = edad;
-      this.DNI = DNI;
+      this.dni = dni;
       this.sexo = sexo;
       this.peso = peso;
       this.altura = altura;
@@ -10,14 +10,13 @@ class Persona {
     }
   
     mostrarDatos() {
-          alert(`Informacion de la persona
-              Nombre: ${this.nombre}
-              Edad: ${this.edad} años
-              DNI: ${this.DNI}
-              Sexo: ${this.sexo}
-              Peso: ${this.peso} Kg
-              Altura: ${this.altura}
-              Año de Nacimiento: ${this.anioNacimiento}
+          alert(`Nombre: ${this.nombre}
+                 Edad: ${this.edad} años
+                 DNI: ${this.dni}
+                 Sexo: ${this.sexo}
+                 Peso: ${this.peso} Kg
+                 Altura: ${this.altura}
+                 Año de Nacimiento: ${this.anioNacimiento}
               `);
     }
   
@@ -29,7 +28,7 @@ class Persona {
       }
     }
   
-    generacion() {
+    generacionDependiendoEdades() {
       const generacionZ = "Generacion Z";
       const generacionY = "Generacion Y millennials";
       const generacionX = "Generacion X";
@@ -37,29 +36,23 @@ class Persona {
       const silentGeneration = "Los niños de la posguerra";
   
       if (this.anioNacimiento >= 1994 && this.anioNacimiento <= 2010) {
-        alert(`<h2>¿A que generacion perteneces?</h2>
-                  <p> ${this.nombre} pertenece a ${generacionZ}. La circunstancia historica fue
-                  <b>La expansión masiva de internet</b> Rasgo caracteristico:<b>Irreverencia 😋</b> </p>`);
+        alert(`${this.nombre} pertenece a ${generacionZ}. La circunstancia historica fue: La expansión masiva de internet. Rasgo caracteristico:Irreverencia 😋`);
       }
       if (this.anioNacimiento >= 1981 && this.anioNacimiento <= 1993) {
-        alert(`<h2>¿A que generacion perteneces?</h2>
-                  <p> ${this.nombre} pertenece a ${generacionY}. La circunstancia historica fue
-                  <b>Inicio de la digilitación</b> Rasgo caracteristico:<b>Frustración 🥶</b> </p>`);
+        alert(`${this.nombre} pertenece a ${generacionY}. La circunstancia historica fue:
+              Inicio de la digilitación. Rasgo caracteristico:Frustración 🥶`);
       }
       if (this.anioNacimiento >= 1969 && this.anioNacimiento <= 1980) {
-        alert(`<h2>¿A que generacion perteneces?</h2>
-                  <p> ${this.nombre} pertenece a ${generacionX}. La circunstancia historica fue
-                  <b>crisis del 73 y transicion española</b> Rasgo caracteristico:<b>Obseción por el exito 😎</b> </p>`);
+        alert(`${this.nombre} pertenece a ${generacionX}. La circunstancia historica fue
+                crisis del 73 y transicion española. Rasgo caracteristico:Obsesiòn por el exito 😎`);
       }
       if (this.anioNacimiento >= 1949 && this.anioNacimiento <= 1968) {
-        alert(`<h2>¿A que generacion perteneces?</h2>
-                  <p> ${this.nombre} pertenece a ${generacionB}. La circunstancia historica fue
-                  <b>paz y explosión demográfica</b> Rasgo caracteristico:<b>Ambición 🤑</b> </p>`);
+        alert(`${this.nombre} pertenece a ${generacionB}. La circunstancia historica fue:
+                paz y explosión demográfica. Rasgo caracteristico:Ambición 🤑`);
       }
       if (this.anioNacimiento >= 1930 && this.anioNacimiento <= 1948) {
-        alert(`<h2>¿A que generacion perteneces?</h2>
-                  <p> ${this.nombre} pertenece a ${silentGeneration}. La circunstancia historica fue
-                  <b>conflictos belicos</b> Rasgo caracteristico:<b>Austeridad 😐</b> </p>`);
+        alert(`${this.nombre} pertenece a ${silentGeneration}. La circunstancia historica fue:
+                conflictos belicos. Rasgo caracteristico:Austeridad 😐`);
       }
     }
   }
@@ -83,16 +76,16 @@ class Persona {
     let persona = new Persona(
       nombre,
       edad,
-      edad,
       DNI,
       sexo,
       peso,
       altura,
       anioNacimiento
     );
-  
-  
-    generacion.addEventListener("click", () => alert(persona.generacion()));
+
+    persona.mostrarDatos();
+
+    generacion.addEventListener("click", () => alert(persona.generacionDependiendoEdades()));
   
     mayorEdad.addEventListener("click", () => alert(persona.mayorDeEdad()));
   });
